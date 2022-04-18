@@ -1,2 +1,9 @@
-<title>Movie Collection</title>
-<h1>{{ movies[0] }}!</h1>
+<title>Movies Collection</title> {# Title for tab bar #}
+{% for movie in movies %} {# loop through movies #}
+<h1>{{ movie.title }}</h1>
+<p>{{ movie.release_date}}</p>
+<p>{{ movie.overview }}</p>
+{% if movie.homepage %} {# only show homepage if it exists #}
+<p><a href="{{ movie.homepage }}" >homepage</a></p>
+{% endif %}
+{% endfor %}
